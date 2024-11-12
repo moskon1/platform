@@ -1,8 +1,8 @@
-import { useWallet } from '@solana/wallet-adapter-react'
-import { useWalletModal } from '@solana/wallet-adapter-react-ui'
-import React from 'react'
-import styled from 'styled-components'
-import { useUserStore } from '../../hooks/useUserStore'
+import { useWallet } from "@solana/wallet-adapter-react";
+import { useWalletModal } from "@solana/wallet-adapter-react-ui";
+import React, { useEffect } from "react";
+import styled from "styled-components";
+import { useUserStore } from "../../hooks/useUserStore";
 
 const Buttons = styled.div`
   overflow: hidden;
@@ -21,7 +21,7 @@ const Buttons = styled.div`
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    padding-top: 0!important;
+    padding-top: 0 !important;
   }
 
   & > button {
@@ -30,14 +30,14 @@ const Buttons = styled.div`
     border-radius: 10px;
     padding: 10px;
     background: #ffffffdf;
-    transition: background-color .2s ease;
+    transition: background-color 0.2s ease;
     color: black;
     cursor: pointer;
     &:hover {
       background: white;
     }
   }
-`
+`;
 
 const Welcome = styled.div`
   @keyframes welcome-fade-in {
@@ -61,9 +61,16 @@ const Welcome = styled.div`
     }
   }
 
-  background: linear-gradient(-45deg, #ffb07c, #ff3e88, #2969ff, #ef3cff, #ff3c87);
+  background: linear-gradient(
+    -45deg,
+    #ffb07c,
+    #ff3e88,
+    #2969ff,
+    #ef3cff,
+    #ff3c87
+  );
   background-size: 300% 300%;
-  animation: welcome-fade-in .5s ease, backgroundGradient 30s ease infinite;
+  animation: welcome-fade-in 0.5s ease, backgroundGradient 30s ease infinite;
   border-radius: 10px;
   position: relative;
   overflow: hidden;
@@ -72,7 +79,8 @@ const Welcome = styled.div`
   justify-content: center;
   flex-direction: column;
   padding: 20px;
-  filter: drop-shadow(0 4px 3px rgba(0,0,0,.07)) drop-shadow(0 2px 2px rgba(0,0,0,.06));
+  filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07))
+    drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06));
 
   & img {
     animation-duration: 5s;
@@ -82,13 +90,18 @@ const Welcome = styled.div`
     height: 100px;
     top: 0;
     right: 0;
-    &:nth-child(1) {animation-delay: 0s;}
-    &:nth-child(2) {animation-delay: 1s;}
+    &:nth-child(1) {
+      animation-delay: 0s;
+    }
+    &:nth-child(2) {
+      animation-delay: 1s;
+    }
   }
 
   & > div {
     padding: 0px;
-    filter: drop-shadow(0 4px 3px rgba(0,0,0,.07)) drop-shadow(0 2px 2px rgba(0,0,0,.06));
+    filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07))
+      drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06));
   }
 
   @media (min-width: 800px) {
@@ -99,38 +112,51 @@ const Welcome = styled.div`
       padding: 40px;
     }
   }
-`
+`;
 
 export function WelcomeBanner() {
-  const wallet = useWallet()
-  const walletModal = useWalletModal()
-  const store = useUserStore()
+  const wallet = useWallet();
+  const walletModal = useWalletModal();
+  const store = useUserStore();
   const copyInvite = () => {
-    store.set({ userModal: true })
+    store.set({ userModal: true });
     if (!wallet.connected) {
-      walletModal.setVisible(true)
+      walletModal.setVisible(true);
     }
-  }
+  };
+
+  useEffect(() => {
+    // Check if the Twitter script is already loaded
+    const script = document.createElement("script");
+    script.src = "https://platform.twitter.com/widgets.js";
+    script.async = true;
+    script.charset = "utf-8";
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup by removing the script when the component unmounts
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
-    <Welcome>
-      <div>
-        <h1>Welcome to Gamba v2 👋</h1>
-        <p>
-          A fair, simple and decentralized casino on Solana.
-        </p>
-      </div>
-      <Buttons>
-        <button onClick={copyInvite}>
-          💸 Copy Invite
-        </button>
-        <button onClick={() => window.open('https://v2.gamba.so/', '_blank')}>
-          🚀 Add Liquidity
-        </button>
-        <button onClick={() => window.open('https://discord.gg/HSTtFFwR', '_blank')}>
-          💬 Discord
-        </button>
-      </Buttons>
-    </Welcome>
-  )
+    <>
+      {" "}
+      <Welcome>
+        <div>
+          <h1>Cybeario Casino</h1>
+          <p>A fair, simple and decentralized casino on Solana.</p>
+        </div>
+        <Buttons>
+          <button onClick={copyInvite}>💸 Copy Invite</button>
+
+          <button
+            onClick={() => window.open("https://t.me/cybearzz", "_blank")}
+          >
+            💬 Telegram
+          </button>
+        </Buttons>
+      </Welcome>
+    </>
+  );
 }
