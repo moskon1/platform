@@ -155,6 +155,20 @@ export function WelcomeBanner() {
           >
             💬 Telegram
           </button>
+
+          <button onClick={() => window.open("https://cybearz.com", "_blank")}>
+            💬 CybearZ
+          </button>
+          <button
+            onClick={() =>
+              window.open(
+                "https://www.launchmynft.io/collections/5ytvtJJMJycyocpgowh4FTkUNyTJgcDFc9pvnNUF17a7/DNxKky5UZcXE5TUBy3pc",
+                "_blank"
+              )
+            }
+          >
+            💬 CybearZ NFT
+          </button>
         </Buttons>
       </Welcome>
     </>
