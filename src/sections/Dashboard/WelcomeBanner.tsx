@@ -78,7 +78,7 @@ const Welcome = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 20px;
+  padding: 10px;
   filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07))
     drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06));
 
@@ -146,6 +146,7 @@ export function WelcomeBanner() {
         <div>
           <h1>Cybeario Casino</h1>
           <p>A fair, simple and decentralized casino on Solana.</p>
+          <img src="./cybeario.png" width={500} height={500} alt="" />
         </div>
         <Buttons>
           <button onClick={copyInvite}>💸 Copy Invite</button>
