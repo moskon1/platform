@@ -69,15 +69,15 @@ const Welcome = styled.div`
     #ef3cff,
     #ff3c87
   );
-  background-size: 300% 300%;
+
   animation: welcome-fade-in 0.5s ease, backgroundGradient 30s ease infinite;
   border-radius: 10px;
-  position: relative;
+
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+
   padding: 10px;
   filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07))
     drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06));
@@ -86,8 +86,8 @@ const Welcome = styled.div`
     animation-duration: 5s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     top: 0;
     right: 0;
     &:nth-child(1) {
@@ -106,11 +106,16 @@ const Welcome = styled.div`
 
   @media (min-width: 800px) {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr 0fr;
     padding: 0;
     & > div {
       padding: 40px;
     }
+  }
+  & img {
+    width: 100%; /* Ensures the image fills the container */
+    height: auto;
+    border-radius: 10px;
   }
 `;
 
@@ -143,34 +148,102 @@ export function WelcomeBanner() {
     <>
       {" "}
       <Welcome>
-        <div>
-          <h1>Cybeario Casino</h1>
-          <p>A fair, simple and decentralized casino on Solana.</p>
-          <img src="./cybeario.png" width={500} height={500} alt="" />
+        <div className="relative py-12 overflow-hidden  sm:py-16 lg:py-20 xl:py-24">
+          <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-0">
+              {/* Left Section */}
+              <div className="text-center lg:text-left">
+                <h1 className="text-3xl font-bold text-white-900 sm:text-4xl md:text-5xl lg:leading-tight xl:text-6xl">
+                  Cybeario Casino✨
+                </h1>
+                <p className="mt-5 text-lg font-medium text-gray-900 lg:mt-8">
+                  A fair, simple and decentralized casino on Solana.
+                </p>
+                <div className="mt-8 lg:mt-10 flex flex-wrap gap-4 justify-center lg:justify-start">
+                  <a
+                    href="https://www.launchmynft.io/collections/5ytvtJJMJycyocpgowh4FTkUNyTJgcDFc9pvnNUF17a7/DNxKky5UZcXE5TUBy3pc"
+                    className="inline-flex items-center justify-center px-8 py-3 text-base font-bold text-white bg-gray-900 hover:bg-gray-600 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                    role="button"
+                  >
+                    CybearZ NFTs
+                  </a>
+                  <a
+                    href="https://cybearz.com"
+                    className="inline-flex items-center justify-center px-8 py-3 text-base font-bold text-white bg-gray-900 hover:bg-gray-600 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                    role="button"
+                  >
+                    CybearZ
+                  </a>
+                  <a
+                    href="https://t.me/cybearzz"
+                    className="inline-flex items-center justify-center px-8 py-3 text-base font-bold text-white bg-gray-900 hover:bg-gray-600 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                    role="button"
+                  >
+                    Telegram
+                  </a>
+                  <a
+                    href="https://x.com/cybearzz"
+                    className="inline-flex items-center justify-center px-8 py-3 text-base font-bold text-white bg-gray-900 hover:bg-gray-600 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                    role="button"
+                  >
+                    Twitter
+                  </a>
+                </div>
+
+                <div className="inline-grid grid-cols-2 mt-8 gap-x-8">
+                  <div>
+                    <p className="text-4xl font-bold text-white-900">3333</p>
+                    <p className="mt-2 text-base font-medium text-black-500">
+                      CybearZ
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Section */}
+              <div className="flex justify-center lg:justify-end mt-12 lg:mt-0">
+                <div className="w-full sm:w-2/3 lg:w-full max-w-sm">
+                  <div className="overflow-hidden bg-white rounded shadow-xl">
+                    <div className="aspect-w-2 aspect-h-2">
+                      <img
+                        className="object-cover w-full h-full"
+                        src="/cybeario.png"
+                        alt="Digital Artwork"
+                      />
+                    </div>
+                    <div className="p-8">
+                      <p className="text-lg font-bold text-gray-900">Cyberio</p>
+                      <p className="mt-6 text-xs font-medium tracking-widest text-gray-500 uppercase">
+                        Reserved Price
+                      </p>
+                      <div className="flex items-end mt-1">
+                        <p className="text-lg font-bold text-gray-900">
+                          0.05 SOL
+                        </p>
+                      </div>
+                      <div className="grid grid-cols-2 mt-7 gap-x-4">
+                        <a
+                          href="https://www.launchmynft.io/collections/5ytvtJJMJycyocpgowh4FTkUNyTJgcDFc9pvnNUF17a7/DNxKky5UZcXE5TUBy3pc"
+                          className="inline-flex items-center justify-center px-4 py-4 text-sm font-bold text-white bg-gray-900 hover:bg-gray-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                          role="button"
+                        >
+                          Get a Cybear
+                        </a>
+                        <a
+                          href="https://oncyber.io/cybearz"
+                          className="inline-flex items-center justify-center px-4 py-4 text-sm font-bold text-gray-900 bg-transparent border border-gray-300 hover:bg-gray-100 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                          role="button"
+                        >
+                          View 3D Museum
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <Buttons>
-          <button onClick={copyInvite}>💸 Copy Invite</button>
-
-          <button
-            onClick={() => window.open("https://t.me/cybearzz", "_blank")}
-          >
-            💬 Telegram
-          </button>
-
-          <button onClick={() => window.open("https://cybearz.com", "_blank")}>
-            💬 CybearZ
-          </button>
-          <button
-            onClick={() =>
-              window.open(
-                "https://www.launchmynft.io/collections/5ytvtJJMJycyocpgowh4FTkUNyTJgcDFc9pvnNUF17a7/DNxKky5UZcXE5TUBy3pc",
-                "_blank"
-              )
-            }
-          >
-            💬 CybearZ NFT
-          </button>
-        </Buttons>
       </Welcome>
     </>
   );
