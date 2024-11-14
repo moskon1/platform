@@ -230,7 +230,7 @@ export function WelcomeBanner() {
                           Get a Cybear
                         </a>
                         <a
-                          href="https://oncyber.io/cybearz"
+                          href="#3d"
                           className="inline-flex items-center justify-center px-4 py-4 text-sm font-bold text-gray-900 bg-transparent border border-gray-300 hover:bg-gray-100 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
                           role="button"
                         >

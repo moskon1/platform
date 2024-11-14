@@ -77,14 +77,15 @@ export default function App() {
         </Routes>
         <h2 style={{ textAlign: "center" }}>Recent Plays</h2>
         <RecentPlays />
-        <div>
-          <a
-            className="twitter-timeline"
-            data-height="1000"
-            href="https://twitter.com/CYBEARZZ?ref_src=twsrc%5Etfw"
-          >
-            Tweets by CYBEARZZ
-          </a>
+
+        <div
+          id="3d"
+          className="w-full h-[70vh] aspect-w-16 aspect-h-9 md:aspect-w-16 md:aspect-h-9 lg:aspect-w-21 lg:aspect-h-9"
+        >
+          <iframe
+            className="w-full h-full"
+            src="https://oncyber.io/cybearz?coords=10.44x3.79x-18.34x-1.76"
+          ></iframe>
         </div>
       </MainWrapper>
     </>
