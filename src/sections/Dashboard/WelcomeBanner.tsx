@@ -188,6 +188,13 @@ export function WelcomeBanner() {
                   >
                     Twitter
                   </a>
+                  <a
+                    href="https://pump.fun/coin/D3JZmqqmMULhcyHMVwRZFzXBAQBGB96XQCqHiPvmpump"
+                    className="inline-flex items-center justify-center px-8 py-3 text-base font-bold text-white bg-gray-900 hover:bg-gray-600 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                    role="button"
+                  >
+                    PumpFun
+                  </a>
                 </div>
 
                 <div className="inline-grid grid-cols-2 mt-8 gap-x-8">
