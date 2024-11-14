@@ -113,7 +113,6 @@ const Welcome = styled.div`
     }
   }
   & img {
-    width: 100%; /* Ensures the image fills the container */
     height: auto;
     border-radius: 10px;
   }
