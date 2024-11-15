@@ -210,9 +210,11 @@ export function WelcomeBanner() {
               <div className="flex justify-center lg:justify-end mt-12 lg:mt-0">
                 <div className="w-full sm:w-2/3 lg:w-full max-w-sm">
                   <div className="overflow-hidden bg-white rounded shadow-xl">
-                    <div className="aspect-w-2 aspect-h-2">
+                    <div className="relative w-full h-64">
+                      {" "}
+                      {/* Fixed height for the image container */}
                       <img
-                        className="object-cover w-full h-full"
+                        className="absolute inset-0 min-w-full min-h-full object-cover"
                         src="/cybeario.png"
                         alt="Digital Artwork"
                       />
